@@ -2,13 +2,16 @@ import random
 import time
 
 from pet import Pet
-from sql_queries import conn, create_table, insert_pet
+from sql_queries import create_table, insert_pet
+from credentials import conn
 
-create_table()
+
+create_table(conn)
 
 if __name__ == '__main__':
     while True:
         insert_pet(
+            conn,
                 Pet(
                     name=random.choice(["Cтепа", "Кузя", "Маша", "Гоша", "Тиша"]),
                     view=random.choice(["млекопитающее", "рептилия", "птица"]),
