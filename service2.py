@@ -1,5 +1,6 @@
 import time
 from sql_queries import create_table, update_pet
+from credentials import conn
 
 create_table(conn)
 
